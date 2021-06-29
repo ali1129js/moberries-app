@@ -15,7 +15,7 @@ class CreditData extends Component {
   render() {
     const { cardNum, expirMon, expirYear, cvv } = this.state;
     return (
-      <form onSubmit={this.props.handleSubmit}>
+      <form className="input-group" onSubmit={this.props.handleSubmit}>
         <label>
           Credit Card Number:
           <input type="text" value={cardNum} onChange={this.setCardN} />

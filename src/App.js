@@ -1,5 +1,5 @@
 /*
-This Comonent :
+This Component :
 -fetch Data from endpoint and pass it as props
 -error handling
 -Conditional rendering
