@@ -45,7 +45,7 @@ class App extends Component {
           });
         }
       );
-    let data = localStorage.getItem("mytodos");
+    let data = localStorage.getItem("myData");
     if (data) {
       let state = JSON.parse(data);
       this.setState({ state });
