@@ -60,7 +60,6 @@ class CreditData extends Component {
                 required
               />
             </div>
-            <br />
             Security Code:
             <input
               type="text"

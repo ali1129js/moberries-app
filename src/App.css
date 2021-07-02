@@ -32,7 +32,7 @@
 }
 .ccinfo {
   width: 25px;
-  margin: 10px 5px 15px 0px;
+  margin: 10px 5px 10px 0px;
 }
 .confirm {
   border: 1px solid #495a8f;
@@ -40,4 +40,15 @@
   max-width: 540px;
   box-shadow: 5px 5px 5px 5px grey;
   margin-top: 15px;
+}
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid red;
+}
+.sum {
+  padding: 20px;
+  font-size: 1.3rem;
+}
+.text {
+  display: inline-block;
 }

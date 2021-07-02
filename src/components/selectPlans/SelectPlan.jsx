@@ -29,6 +29,7 @@ class SelectPlan extends Component {
   handleUpFront = (value) => {
     this.setState({ upfront: value }, () => this.calculateCost());
   };
+
   //Calculate Cost
   calculateCost = () => {
     //Destructuring state
@@ -79,7 +80,7 @@ class SelectPlan extends Component {
           <UpFront handleUpFront={this.handleUpFront} />
         </div>
         <button
-          className="btn btn-outline-info btn-lg"
+          className="btn btn-outline-info btn-lg m-2"
           onClick={() => this.props.handleNext(this.state)}
         >
           Next

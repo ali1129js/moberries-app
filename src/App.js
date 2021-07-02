@@ -57,6 +57,7 @@ class App extends Component {
   handleConfirm = () => {
     this.setState({ step: "3" });
   };
+
   //update App.js from SelectPlan
   handlUpdateSelect = (state) => {
     this.setState({
@@ -66,6 +67,7 @@ class App extends Component {
       total: state.total,
     });
   };
+
   //update App.js from CreditData
   handleCreditData = (ccData) => {
     this.setState({ ccData: ccData });
