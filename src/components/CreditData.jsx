@@ -33,7 +33,7 @@ class CreditData extends Component {
               placeholder="0000 0000 0000 0000"
               value={cardNum}
               onChange={this.handleChange}
-              maxLength="12"
+              maxLength="16"
               required
             />
             <br />

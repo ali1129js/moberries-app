@@ -45,7 +45,17 @@ class App extends Component {
           });
         }
       );
+    let data = localStorage.getItem("mytodos");
+    if (data) {
+      let state = JSON.parse(data);
+      this.setState({ state });
+    }
   }
+
+  componentDidUpdate = () => {
+    let data = JSON.stringify(this.state);
+    localStorage.setItem("myData", data);
+  };
 
   //Chnage step to render the corresponding components
   handleNext = () => {
