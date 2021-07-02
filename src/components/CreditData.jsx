@@ -8,42 +8,24 @@ class CreditData extends Component {
     cvv: "",
     email: "",
   };
-  //methods to update this state and callback to parent
-  setCardN = (e) =>
-    this.setState({ cardNum: e.target.value }, () =>
-      this.props.handleCreditData(this.state)
-    );
-  setExpirationM = (e) =>
-    this.setState({ expirMon: e.target.value }, () =>
-      this.props.handleCreditData(this.state)
-    );
-  setExpirationY = (e) =>
-    this.setState({ expirYear: e.target.value }, () =>
-      this.props.handleCreditData(this.state)
-    );
-  setCardCvv = (e) =>
-    this.setState({ cvv: e.target.value }, () =>
-      this.props.handleCreditData(this.state)
-    );
-  setEmail = (e) =>
-    this.setState({ email: e.target.value }, () =>
-      this.props.handleCreditData(this.state)
-    );
-  handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
+  //Update this state and callback to parent
   handleChange = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.name]: e.target.value,
-    });
+    this.setState(
+      {
+        ...this.state,
+        [e.target.name]: e.target.value,
+      },
+      () => this.props.handleCreditData(this.state)
+    );
   };
+
   render() {
     const { cardNum, expirMon, expirYear, cvv, email } = this.state;
     return (
       <div className="container-sm">
         <div className="creditform">
-          <form onSubmit={this.handleSubmit}>
+          <form>
             Credit Card Number:
             <input
               type="text"
@@ -92,7 +74,7 @@ class CreditData extends Component {
             <br />
             Email:
             <input
-              type="email"
+              type="text"
               name="email"
               placeholder="jon@mail.com"
               value={email}
@@ -101,6 +83,7 @@ class CreditData extends Component {
             />
           </form>
         </div>
+
         <button
           type="button"
           className="btn btn-outline-info btn-lg"
@@ -110,7 +93,7 @@ class CreditData extends Component {
         </button>
         <button
           type="button"
-          className="btn btn-outline-info btn-lg"
+          className="btn btn-outline-info btn-lg m-2"
           onClick={this.props.handleConfirm}
         >
           Next

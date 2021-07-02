@@ -71,22 +71,20 @@ class SelectPlan extends Component {
   };
   render() {
     return (
-     
-        <div className="select">
-          <div className="params">
-            <div className="header">Select your Plan</div>
-            <Duration handleDuration={this.handleDuration} />
-            <Amount handleAmount={this.handleAmount} />
-            <UpFront handleUpFront={this.handleUpFront} />
-          </div>
-          <button
-            className="btn btn-outline-info btn-lg"
-            onClick={() => this.props.handleNext(this.state)}
-          >
-            Next
-          </button>
+      <div className="select">
+        <div className="params">
+          <div className="header">Select your Plan</div>
+          <Duration handleDuration={this.handleDuration} />
+          <Amount handleAmount={this.handleAmount} />
+          <UpFront handleUpFront={this.handleUpFront} />
         </div>
-      
+        <button
+          className="btn btn-outline-info btn-lg"
+          onClick={() => this.props.handleNext(this.state)}
+        >
+          Next
+        </button>
+      </div>
     );
   }
 }

@@ -23,11 +23,11 @@ class App extends Component {
       duration: "12",
       amount: 5,
       upfront: false,
-      email: "",
+      ccData: "",
       total: 10,
     };
   }
-  //fetch Data
+  //fetch Prices
   componentDidMount() {
     fetch("https://cloud-storage-prices-moberries.herokuapp.com/prices")
       .then((res) => res.json())
@@ -57,7 +57,7 @@ class App extends Component {
   handleConfirm = () => {
     this.setState({ step: "3" });
   };
-  //update App.js from SelectPlan.js
+  //update App.js from SelectPlan
   handlUpdateSelect = (state) => {
     this.setState({
       duration: state.duration,
@@ -66,9 +66,9 @@ class App extends Component {
       total: state.total,
     });
   };
+  //update App.js from CreditData
   handleCreditData = (ccData) => {
-    console.log(ccData);
-    console.log("fired");
+    this.setState({ ccData: ccData });
   };
   render() {
     const {
@@ -115,7 +115,10 @@ class App extends Component {
       return (
         <div className="container-sm">
           <CurrentSubs duration={duration} amount={amount} total={total} />
-          <Confirmation handleNext={this.handleNext} />
+          <Confirmation
+            handleNext={this.handleNext}
+            confirmation={this.state}
+          />
         </div>
       );
     }
