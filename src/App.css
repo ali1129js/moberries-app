@@ -15,9 +15,22 @@
 }
 .current {
   border: 1px solid #495a8f;
-  padding: 20px;
+  padding: 25px;
   max-width: 540px;
+  font-size: 1.5em;
+  margin-top: 25px;
 }
 .container {
   border: 1px solid #495a8f;
+}
+.creditform {
+  border: 1px solid #495a8f;
+  padding: 15px;
+  max-width: 540px;
+  box-shadow: 5px 5px 5px 5px grey;
+  margin: 15px 0px 10px 0px;
+}
+.ccinfo {
+  width: 25px;
+  margin: 10px 5px 15px 0px;
 }

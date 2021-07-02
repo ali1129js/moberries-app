@@ -12,7 +12,7 @@ const UpFront = ({ handleUpFront }) => {
     handleUpFront(checked);
   }, [checked, handleUpFront]);
   return (
-    <>
+    <div>
       <div className="form-check">
         <input
           className="form-check-input"
@@ -31,7 +31,7 @@ const UpFront = ({ handleUpFront }) => {
         />
         <label className="form-check-label">No Thanks</label>
       </div>
-    </>
+    </div>
   );
 };
 export default UpFront;

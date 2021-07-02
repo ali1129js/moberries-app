@@ -1,5 +1,4 @@
 /*
-This Component :
 -fetch Data from endpoint and pass it as props
 -error handling
 -Conditional rendering
@@ -48,10 +47,16 @@ class App extends Component {
       );
   }
 
-  handleNext = (selected) => {
+  //Chnage step to render the corresponding components
+  handleNext = () => {
     this.setState({ step: "2" });
   };
-
+  handleBack = () => {
+    this.setState({ step: "1" });
+  };
+  handleConfirm = () => {
+    this.setState({ step: "3" });
+  };
   //update App.js from SelectPlan.js
   handlUpdateSelect = (state) => {
     this.setState({
@@ -61,7 +66,10 @@ class App extends Component {
       total: state.total,
     });
   };
-
+  handleCreditData = (ccData) => {
+    console.log(ccData);
+    console.log("fired");
+  };
   render() {
     const {
       error,
@@ -96,14 +104,18 @@ class App extends Component {
       return (
         <div className="container-sm">
           <CurrentSubs duration={duration} amount={amount} total={total} />
-          <CreditData handleSubmit={this.handleSubmit} />
+          <CreditData
+            handleCreditData={this.handleCreditData}
+            handleBack={this.handleBack}
+            handleConfirm={this.handleConfirm}
+          />
         </div>
       );
     } else if (step === "3") {
       return (
         <div className="container-sm">
           <CurrentSubs duration={duration} amount={amount} total={total} />
-          <Confirmation />
+          <Confirmation handleNext={this.handleNext} />
         </div>
       );
     }

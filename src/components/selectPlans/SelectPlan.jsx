@@ -38,6 +38,7 @@ class SelectPlan extends Component {
     // calclate with 10% reduced prices
     if (upfront && duration === "3") {
       let total = amount * arrayPrices[0] * 0.9;
+      //update state and send it up
       this.setState({ total: total }, () =>
         this.props.handlUpdateSelect(this.state)
       );
@@ -70,7 +71,7 @@ class SelectPlan extends Component {
   };
   render() {
     return (
-      <>
+     
         <div className="select">
           <div className="params">
             <div className="header">Select your Plan</div>
@@ -79,13 +80,13 @@ class SelectPlan extends Component {
             <UpFront handleUpFront={this.handleUpFront} />
           </div>
           <button
-            className="btn btn-outline-info btn-lg m-2"
+            className="btn btn-outline-info btn-lg"
             onClick={() => this.props.handleNext(this.state)}
           >
             Next
           </button>
         </div>
-      </>
+      
     );
   }
 }
